@@ -11,6 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
+    - host: apsariudithara.study
       http:
         paths:
           - path: /api
