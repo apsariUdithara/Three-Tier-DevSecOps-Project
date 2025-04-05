@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: amanpathakdevops.study
+    - host: a43cc1a9bc34f40759acd667356e980b-829075578.us-east-1.elb.amazonaws.com
       http:
         paths:
           - path: /api
