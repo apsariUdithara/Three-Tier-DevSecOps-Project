@@ -20,28 +20,28 @@ spec:
               service:
                 name: api
                 port:
-                  number: 3500
+                  number: 8000
           - path: /healthz
             pathType: Exact
             backend:
               service:
                 name: api
                 port:
-                  number: 3500
+                  number: 8000
           - path: /ready
             pathType: Exact
             backend:
               service:
                 name: api
                 port:
-                  number: 3500
+                  number: 8000
           - path: /started
             pathType: Exact
             backend:
               service:
                 name: api
                 port:
-                  number: 3500
+                  number: 8000
           - path: /
             pathType: Prefix
             backend:
