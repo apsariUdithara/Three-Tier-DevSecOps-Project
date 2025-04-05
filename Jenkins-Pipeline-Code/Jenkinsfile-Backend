@@ -1,7 +1,6 @@
 pipeline {
     agent any 
     tools {
-        jdk 'jdk'
         nodejs 'nodejs'
     }
     environment  {
@@ -19,7 +18,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git'
+                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git' branch: 'main'
             }
         }
         stage('Sonarqube Analysis') {
@@ -27,8 +26,8 @@ pipeline {
                 dir('Application-Code/backend') {
                     withSonarQubeEnv('sonar-server') {
                         sh ''' $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectName=three-tier-backend \
-                        -Dsonar.projectKey=three-tier-backend '''
+                        -Dsonar.projectName=backend \
+                        -Dsonar.projectKey=backend '''
                     }
                 }
             }
@@ -82,7 +81,7 @@ pipeline {
         }
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git'
+                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git' branch: 'main'
             }
         }
         stage('Update Deployment file') {
