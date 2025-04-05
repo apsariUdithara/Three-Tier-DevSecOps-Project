@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git'
+                git credentialsId: 'GITHUB', url: 'https://github.com/apsariUdithara/Three-Tier-DevSecOps-Project.git' ,branch: 'main'
             }
         }
         stage('Sonarqube Analysis') {
